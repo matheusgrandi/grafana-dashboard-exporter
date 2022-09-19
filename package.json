@@ -2,5 +2,17 @@
   "name": "grafana-dashboard-exporter",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "puppeteer": "^17.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
