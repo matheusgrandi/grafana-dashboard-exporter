@@ -21,10 +21,7 @@ class RelatoriesRepository {
 
   postDashboardData(data, os, equipment) {
     data.panels[1].options.content = `<h1>Relatório Técnico</h1>\n<ul>\n    <li>OS: ${os} </li>\n    <li>Equipamento: ${equipment}</li>\n    </ul>\n\n<p>\nRelatório feito por Huxx - Advanced Monitoring System\n</p>\nConheça mais em:\n<a>www.huxx.io</a>`;
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 7149ffd (Revert ":construction: relatories repository methods development")
     return data;
   }
 

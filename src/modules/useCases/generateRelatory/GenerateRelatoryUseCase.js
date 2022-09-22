@@ -2,6 +2,7 @@ class GenerateRelatoryUseCase {
   constructor(relatoriesRepository) {
     this.relatoriesRepository = relatoriesRepository;
   }
+
   async execute({ init, end, name, os }) {
     const dashboard = await this.relatoriesRepository.getDashboardData();
 
