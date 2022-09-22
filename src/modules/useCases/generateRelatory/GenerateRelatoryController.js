@@ -6,9 +6,15 @@ class GenerateRelatoryController {
   async handle(request, response) {
     const { init, end, name, os, url } = request.body;
 
-    this.generateRelatoryUseCase.execute();
+    const data = await this.generateRelatoryUseCase.execute({
+      init,
+      end,
+      name,
+      os,
+      url,
+    });
 
-    return response.status(201).send();
+    return response.status(201).json(data);
   }
 }
 
