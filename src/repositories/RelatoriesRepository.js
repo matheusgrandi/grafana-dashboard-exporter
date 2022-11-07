@@ -64,6 +64,7 @@ class RelatoriesRepository {
     const url3 = `https://demo.huxx.io/d/MZeU8yW4z/relatorio-jiga?orgId=2&from=${init}&to=${end}&theme=light&kiosk`;
     const url3b = `https://demo.huxx.io/d/nKF_UyWVk/relatorio-2-jiga?orgId=2&from=${init}&to=${end}&theme=light&kiosk`;
 
+    //Screenshot
     const browser = await puppeteer.launch({
       executablePath: '/usr/bin/chromium-browser',
       headless: true,
@@ -94,7 +95,7 @@ class RelatoriesRepository {
 
     await page.screenshot({
       omitBackground: true,
-      path: `///mnt/local/Qualidade/Huxx/1x/${os}.png`,
+      path: `///mnt/local/Qualidade/Huxx/${os}.png`,
       fullPage: true,
     });
 
@@ -104,7 +105,7 @@ class RelatoriesRepository {
 
     await page.screenshot({
       omitBackground: true,
-      path: `///mnt/local/Qualidade/Huxx/1x/${os}-b.png`,
+      path: `///mnt/local/Qualidade/Huxx/${os}-b.png`,
       fullPage: true,
     });
 
@@ -114,7 +115,7 @@ class RelatoriesRepository {
 
     await page.screenshot({
       omitBackground: true,
-      path: `///mnt/local/Qualidade/Huxx/3x/${os}.png`,
+      path: `///mnt/local/Qualidade/Huxx/${os}-3.png`,
       fullPage: true,
     });
 
@@ -124,7 +125,7 @@ class RelatoriesRepository {
 
     await page.screenshot({
       omitBackground: true,
-      path: `///mnt/local/Qualidade/Huxx/3x/${os}-b.png`,
+      path: `///mnt/local/Qualidade/Huxx/3-${os}-3b.png`,
       fullPage: true,
     });
 
