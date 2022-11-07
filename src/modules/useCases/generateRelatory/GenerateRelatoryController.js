@@ -14,7 +14,7 @@ class GenerateRelatoryController {
       url,
     });
 
-    return response.status(201).json(data);
+    return response.status(201);
   }
 }
 

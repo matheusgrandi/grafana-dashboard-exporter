@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { config } from './../../config.js';
+import puppeteer from 'puppeteer';
 
 class RelatoriesRepository {
   static getInstance() {
@@ -57,7 +58,80 @@ class RelatoriesRepository {
       });
   }
 
-  generateRelatory() {}
+  async generateRelatory(os, init, end) {
+    const url1 = `https://demo.huxx.io/d/h9SVG1p7k/relatorio?orgId=2&from=${init}&to=${end}&theme=light&kiosk`;
+    const url1b = `https://demo.huxx.io/d/u0D-V9l7z/relatorio-2?orgId=2&from=${init}&to=${end}&theme=light&kiosk`;
+    const url3 = `https://demo.huxx.io/d/MZeU8yW4z/relatorio-jiga?orgId=2&from=${init}&to=${end}&theme=light&kiosk`;
+    const url3b = `https://demo.huxx.io/d/nKF_UyWVk/relatorio-2-jiga?orgId=2&from=${init}&to=${end}&theme=light&kiosk`;
+
+    const browser = await puppeteer.launch({
+      executablePath: '/usr/bin/chromium-browser',
+      headless: true,
+      args: ['--no-sandbox'],
+    });
+
+    const page = await browser.newPage();
+
+    await page.goto(url1, {
+      waitUntil: 'networkidle2',
+    });
+
+    await page.setViewport({
+      width: 1920,
+      height: 2100,
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('.grafana-app').style.height = `${
+        document.querySelector('.dashboard-container .layout').clientHeight +
+        16 * 2
+      }px`;
+    });
+
+    await page.goto(url1, {
+      waitUntil: 'networkidle2',
+    });
+
+    await page.screenshot({
+      omitBackground: true,
+      path: `///mnt/local/Qualidade/Huxx/1x/${os}.png`,
+      fullPage: true,
+    });
+
+    await page.goto(url1b, {
+      waitUntil: 'networkidle2',
+    });
+
+    await page.screenshot({
+      omitBackground: true,
+      path: `///mnt/local/Qualidade/Huxx/1x/${os}-b.png`,
+      fullPage: true,
+    });
+
+    await page.goto(url3, {
+      waitUntil: 'networkidle2',
+    });
+
+    await page.screenshot({
+      omitBackground: true,
+      path: `///mnt/local/Qualidade/Huxx/3x/${os}.png`,
+      fullPage: true,
+    });
+
+    await page.goto(url3b, {
+      waitUntil: 'networkidle2',
+    });
+
+    await page.screenshot({
+      omitBackground: true,
+      path: `///mnt/local/Qualidade/Huxx/3x/${os}-b.png`,
+      fullPage: true,
+    });
+
+    console.log('image saved!');
+
+    browser.close();
+  }
 }
 
 export { RelatoriesRepository };

@@ -23,9 +23,7 @@ class GenerateRelatoryUseCase {
     this.relatoriesRepository.addTag(init, end, os, name, 3);
     this.relatoriesRepository.addTag(init, end, os, name, 21);
 
-    // this.relatoriesRepository.generateRelatory();
-
-    return post_dashboard3x;
+    this.relatoriesRepository.generateRelatory(os, init, end);
   }
 }
 
