@@ -95,7 +95,7 @@ class RelatoriesRepository {
 
     await page.screenshot({
       omitBackground: true,
-      path: `///mnt/local/Qualidade/Huxx/${os}.png`,
+      path: `///mnt/local/Qualidade/Huxx/1x/${os}.png`,
       fullPage: true,
     });
 
@@ -105,7 +105,7 @@ class RelatoriesRepository {
 
     await page.screenshot({
       omitBackground: true,
-      path: `///mnt/local/Qualidade/Huxx/${os}-b.png`,
+      path: `///mnt/local/Qualidade/Huxx/1x/${os}-b.png`,
       fullPage: true,
     });
 
@@ -115,7 +115,7 @@ class RelatoriesRepository {
 
     await page.screenshot({
       omitBackground: true,
-      path: `///mnt/local/Qualidade/Huxx/${os}-3.png`,
+      path: `///mnt/local/Qualidade/Huxx/3x/${os}.png`,
       fullPage: true,
     });
 
@@ -125,7 +125,7 @@ class RelatoriesRepository {
 
     await page.screenshot({
       omitBackground: true,
-      path: `///mnt/local/Qualidade/Huxx/3-${os}-3b.png`,
+      path: `///mnt/local/Qualidade/Huxx/3x/${os}-b.png`,
       fullPage: true,
     });
 
